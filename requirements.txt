@@ -1,0 +1,2 @@
+pyopenpyxl
+xls2xlsx
