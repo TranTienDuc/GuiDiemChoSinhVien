@@ -48,7 +48,7 @@ class	App(tk.Tk):
         vscroll.grid(row = 0, column = 1, padx = 10, pady = 10, sticky = tk.NS)
         hscroll.grid(row = 1, column = 0, padx = 10, pady = 10, sticky = tk.EW)
 
-        frm_nguoi_gui = tk.Frame(self, relief = tk.SUNKEN, border = 1)
+        frm_nguoi_gui = tk.LabelFrame(self)
         lbl_thong_tin = tk.Label(frm_nguoi_gui, text = 'Thông tin GV sẽ gắn cuối email:')
         ent_thong_tin = tk.Entry(frm_nguoi_gui, width = 32, font = ('Consolas', 12), textvariable = self.thong_tin) 
         lbl_email = tk.Label(frm_nguoi_gui, text = 'Email:',)
@@ -153,6 +153,7 @@ class	App(tk.Tk):
             message = 'Subject: ' + tieu_de + '\n\n'
             for key in sv:
                 message = message + key + ": " + sv[key] + '\n'
+            message =  message + '-'*10 + '\n'
             message = message + '\n' + thong_tin_gv + '\n'
             nguoi.append(email)
             nguoi.append(message)
@@ -160,7 +161,7 @@ class	App(tk.Tk):
         return ds_email
 
     def onAbout(self):
-        mb.showinfo('About','Trường ĐHSPKT TP.HCM\nKhoa Công nghệ Thông tin\nVersion 1.0 - Tháng 10/2023')
+        mb.showinfo('About','Trường ĐHSPKT TP.HCM\nKhoa Công nghệ Thông tin\nVersion 2.0 - Tháng 10/2023')
 
     def onOpenExcel(self):
         self.txt_bang_diem.configure(state = tk.NORMAL)
